@@ -75,12 +75,12 @@ function cumleKur(birinci, ikinci="", ucuncu="", dorduncu="", besinci=""){
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 1 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
-
+console.log(cumleKur("Hello World!"));
 
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 2 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
-
+console.log(cumleKur("Hello", " World!"));
 
 
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
@@ -88,8 +88,8 @@ var bircumle;
 
 /* kodlar buraya */
 
-
-
+bircumle=cumleKur("Ben ", "iyi ", "bir ", "yazılımcı ", "olacağım!");
+console.log(bircumle);
 //		Sayfanın en üstünde global olarak tanımlanmış `cumleler` adında bir dizi bulunmaktadır. Bu dizinin içinde en çok 5 en az 1 adet string bulunan diziler bulunmaktadır. Aşağıdaki görevlerde aksi belirtilmedikçe bu dizi kullanılacaktır.
 
 /* 	GÖREV 1:
@@ -104,8 +104,8 @@ var bircumle;
 	*/
 	
 
-function cumlelereDonustur(/* kodlar buraya */ ){
-	/* kodlar buraya */
+function cumlelereDonustur(gelenDizi, gelenAyrac=","){
+	return gelenDizi.map(array=>array.join(gelenAyrac));
 }
 
 
@@ -120,8 +120,9 @@ function cumlelereDonustur(/* kodlar buraya */ ){
 			6. Oluşturulan paragraf döndürülecek
 	*/
 	
-function paragrafOlustur(/* kodlar buraya */ ){
-	/* kodlar buraya */ 
+function paragrafOlustur(gelenDizi, callbackCumleKur, callbackcumlelereDonustur){
+	let yeniDizi=callbackcumlelereDonustur(gelenDizi, " ");
+	return callbackCumleKur(yeniDizi[1], yeniDizi[3], yeniDizi[5], yeniDizi[7], yeniDizi[9]);
 }
 
 
@@ -130,7 +131,8 @@ function paragrafOlustur(/* kodlar buraya */ ){
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
  */
 //3a çözümü
-/* kodlar buraya */
+			meyveler.pop();
+			meyveler.shift();
 
 
 
@@ -142,7 +144,8 @@ function paragrafOlustur(/* kodlar buraya */ ){
 //3b çözümü
 /* kodlar buraya */
 
-
+		sebzeler.unshift("🐇");
+		sebzeler.push("🦔");
 
 
 
@@ -154,9 +157,9 @@ function paragrafOlustur(/* kodlar buraya */ ){
 	//3c çözümü
 /* kodlar buraya */
 
-var manav;
+var manav=[];
 
-
+manav=meyveler.concat(sebzeler);
 
 
 
@@ -170,11 +173,15 @@ var manav;
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */){
-/* kodlar buraya */
 
+
+function emojileriDonustur(gelenMesaj, gelenNesne){
+	for (let key in gelenNesne){
+		gelenMesaj=gelenMesaj.replaceAll(key.toUpperCase(), key);
+		gelenMesaj=gelenMesaj.replaceAll(key, gelenNesne[key]);
+	}
+	return gelenMesaj;
 }
-
 
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
