@@ -172,7 +172,14 @@ manav=meyveler.concat(sebzeler);
 				yani hem :d hem de :D sembolleri 😁'a dönüşmelidir. bunun için (.toUpperCase ve .toLowerCase metotlarından istediğinizi kullanabilirsiniz.)
 			4. elde edilen string döndürülecek
  */
-
+			/*var emojiler = { 
+				":)": "🙂",
+				":(": "😔",
+				":d": "😁",
+				":p": "😛",
+				":o": "😱",
+				"<3": "❤️",
+				}*/
 
 
 function emojileriDonustur(gelenMesaj, gelenNesne){
@@ -183,6 +190,7 @@ function emojileriDonustur(gelenMesaj, gelenNesne){
 	return gelenMesaj;
 }
 
+console.log(emojileriDonustur("Merhaba Hakan :P", emojiler));
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa(){
